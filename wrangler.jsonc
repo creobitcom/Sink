@@ -26,16 +26,13 @@
     "remote": true
   },
   "analytics_engine_datasets": [
-    {
-      "binding": "ANALYTICS",
-      "dataset": "sink"
-    }
+    { "binding": "ANALYTICS", "dataset": "sink" }
   ],
   "kv_namespaces": [
     {
       "binding": "KV",
-      "preview_id": "ef93d42dc4b34969bab404d2e80f8dd3",
-      "id": "ef93d42dc4b34969bab404d2e80f8dd3" // IMPORTANT: Change this to your KV namespace ID
+      "preview_id": "fe97a9277c5845a3a351fc0602925327",
+      "id": "fe97a9277c5845a3a351fc0602925327"
     }
   ],
   "r2_buckets": [
