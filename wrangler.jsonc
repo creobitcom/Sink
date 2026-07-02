@@ -46,8 +46,6 @@
     "crons": ["0 0 * * *"] // Run backup task daily at 00:00 UTC
   },
   "routes": [
-    // TODO: temporary admin door during migration — remove after go.8floor.net cutover + link import
-    { "pattern": "s.creobit.com", "custom_domain": true },
     // Cloudflare for SaaS custom hostname routed to this Worker on the creobit.com carrier zone
     { "pattern": "go.8floor.net/*", "zone_name": "creobit.com" }
   ]
