@@ -62,7 +62,7 @@ export default eventHandler(async (event) => {
     return
   }
 
-  if (slug && !reserveSlug.includes(slug) && slugRegex.test(slug) && cloudflare) {
+  if (slug && !reserveSlug.includes(slug.split('/')[0]) && slugRegex.test(slug) && cloudflare) {
     let link: Link | null = null
 
     const lowerCaseSlug = slug.toLowerCase()
