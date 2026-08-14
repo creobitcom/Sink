@@ -41,18 +41,16 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "sink", // Override with DEPLOY_D1_DATABASE_NAME (default: sink)
-      "database_id": "ef964055-65bf-4b78-b109-ac9c9290ae62", // Override with DEPLOY_D1_DATABASE_ID (required for CLI deploy)
+      "database_name": "sink",
+      "database_id": "ef964055-65bf-4b78-b109-ac9c9290ae62",
       "migrations_dir": "drizzle"
     }
   ],
   "r2_buckets": [
     {
       "binding": "R2",
-      // preview_bucket_name: DEPLOY_R2_PREVIEW_BUCKET_NAME (falls back to DEPLOY_R2_BUCKET_NAME)
-      // omit DEPLOY_R2_BUCKET_NAME to drop R2 from generated deploy config
       "preview_bucket_name": "sink",
-      "bucket_name": "sink" // Override with DEPLOY_R2_BUCKET_NAME
+      "bucket_name": "sink"
     }
   ],
   "triggers": {
