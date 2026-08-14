@@ -25,6 +25,9 @@
     "binding": "AI",
     "remote": true
   },
+  // Values marked with DEPLOY_* below are placeholders for local/dev.
+  // CLI deploy (pnpm deploy:worker / deploy:config) rewrites them into gitignored wrangler.deploy.jsonc.
+  // Prefer setting DEPLOY_* in .env or Workers Builds / Pages variables — do not hardcode production IDs here.
   "analytics_engine_datasets": [
     { "binding": "ANALYTICS", "dataset": "sink" }
   ],
@@ -35,11 +38,21 @@
       "id": "fe97a9277c5845a3a351fc0602925327"
     }
   ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "sink", // Override with DEPLOY_D1_DATABASE_NAME (default: sink)
+      "database_id": "ef964055-65bf-4b78-b109-ac9c9290ae62", // Override with DEPLOY_D1_DATABASE_ID (required for CLI deploy)
+      "migrations_dir": "drizzle"
+    }
+  ],
   "r2_buckets": [
     {
       "binding": "R2",
+      // preview_bucket_name: DEPLOY_R2_PREVIEW_BUCKET_NAME (falls back to DEPLOY_R2_BUCKET_NAME)
+      // omit DEPLOY_R2_BUCKET_NAME to drop R2 from generated deploy config
       "preview_bucket_name": "sink",
-      "bucket_name": "sink" // IMPORTANT: Change this to your R2 bucket name, or create one with `wrangler r2 bucket create sink`
+      "bucket_name": "sink" // Override with DEPLOY_R2_BUCKET_NAME
     }
   ],
   "triggers": {
